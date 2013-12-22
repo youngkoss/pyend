@@ -1,8 +1,1 @@
-Django
-distribute
-django-tastypie
-python-dateuti
-python-mimeparse
-pytil
-six
-wsgiref
+ 
