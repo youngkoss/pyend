@@ -6,7 +6,7 @@ from pytils.translit import slugify
 class User(models.Model):
     is_active = models.NullBooleanField(default=True, null=True, blank=True)
     name_organization = models.TextField(null=True, blank=True)
-    logo = models.ImageField(upload_to='image_logo', null=True, blank=True)
+    logo = models.FileField(upload_to='image_logo', null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if self.logo:
