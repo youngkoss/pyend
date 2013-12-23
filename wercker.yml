@@ -1,0 +1,14 @@
+box: wercker/python
+build:
+    steps:
+        - pip-install
+
+deploy:
+    steps:
+        - script:
+            name: Heroku settings hack
+            code: echo "from settings_heroku import *" >> settings.py && git config user.email "hcar@hcar.com" && git config user.name "hcar" && git commit -a -m "hcar settings fix"
+        - heroku-deploy
+        - script: 
+            name: Syncdb
+            code: heroku run "python manage.py syncdb --noinput" --app lunch-for-me-staging
