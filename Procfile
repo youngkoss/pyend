@@ -1,1 +1,1 @@
-web: honcho -f ProcfileFree start
+web: gunicorn wsgi_heroku:application
