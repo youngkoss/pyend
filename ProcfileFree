@@ -1,1 +1,1 @@
-web: gunicorn hcar.wsgi_heroku:application
+web: gunicorn wsgi_heroku:application
