@@ -1,3 +1,5 @@
+from settings import *
+
 DATABASES = {}
 
 # Parse database configuration from $DATABASE_URL
