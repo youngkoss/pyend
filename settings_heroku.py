@@ -1,7 +1,7 @@
-# try:
-#     from settings import *
-# except ImportError:
-#     pass
+try:
+    from settings import *
+except ImportError:
+    pass
 
 DATABASES = {}
 
