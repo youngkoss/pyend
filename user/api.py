@@ -9,9 +9,9 @@ from partner.api import PartnerResource
 
 
 class UserResource(ModelResource):
-    dashboards = fields.ToManyField('dashboard.api.DashboardResource', 'dashboards', null=True, blank=True,)
-    notifications = fields.ToManyField('notification.api.NotificationResource', 'notifications', null=True, blank=True,)
-    partners = fields.ToManyField('partner.api.PartnerResource', 'partners', null=True, blank=True,)
+    dashboards = fields.ToManyField(DashboardResource, 'dashboards', null=True, blank=True,)
+    notifications = fields.ToManyField(NotificationResource, 'notifications', null=True, blank=True,)
+    partners = fields.ToManyField(PartnerResource, 'partners', null=True, blank=True,)
 
     class Meta:
         queryset = User.objects.all()
