@@ -1,11 +1,13 @@
-from tastypie.resources import ModelResource
+from tastypie_resource.resources import ModelResource
 from tastypie.authentication import BasicAuthentication
 from tastypie.authorization import DjangoAuthorization
 from tastypie import fields
-from user.models import User
+
 from dashboard.api import DashboardResource
 from notification.api import NotificationResource
 from partner.api import PartnerResource
+
+from user.models import User
 
 
 class UserResource(ModelResource):
@@ -21,9 +23,6 @@ class UserResource(ModelResource):
         # authentication = BasicAuthentication()
 
         excludes = ['resource_uri']
-
-    def determine_format(self, request):
-        return 'application/json'
 
     def dehydrate(self, bundle):
         bundle.data['task'] = []

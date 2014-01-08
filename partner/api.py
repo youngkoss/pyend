@@ -1,8 +1,9 @@
-from tastypie.resources import ModelResource
-from partner.models import Partner
+from tastypie_resource.resources import ModelResource
 from tastypie.authentication import BasicAuthentication
 from tastypie.authorization import DjangoAuthorization
 from tastypie import fields
+
+from partner.models import Partner
 
 
 class PartnerResource(ModelResource):
@@ -14,6 +15,3 @@ class PartnerResource(ModelResource):
 
         # authorization = DjangoAuthorization()
         # authentication = BasicAuthentication()
-
-    def determine_format(self, request):
-        return 'application/json'

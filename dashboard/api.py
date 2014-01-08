@@ -1,8 +1,9 @@
-from tastypie.resources import ModelResource
-from dashboard.models import Dashboard
+from tastypie_resource.resources import ModelResource
 from tastypie.authentication import BasicAuthentication
 from tastypie.authorization import DjangoAuthorization
 from tastypie import fields
+
+from dashboard.models import Dashboard
 
 
 class DashboardResource(ModelResource):
@@ -14,6 +15,3 @@ class DashboardResource(ModelResource):
 
         # authorization = DjangoAuthorization()
         # authentication = BasicAuthentication()
-
-    def determine_format(self, request):
-        return 'application/json'

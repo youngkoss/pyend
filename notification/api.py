@@ -1,8 +1,9 @@
-from tastypie.resources import ModelResource
-from notification.models import Notification
+from tastypie_resource.resources import ModelResource
 from tastypie.authentication import BasicAuthentication
 from tastypie.authorization import DjangoAuthorization
 from tastypie import fields
+
+from notification.models import Notification
 
 
 class NotificationResource(ModelResource):
@@ -15,5 +16,3 @@ class NotificationResource(ModelResource):
         # authorization = DjangoAuthorization()
         # authentication = BasicAuthentication()
 
-    def determine_format(self, request):
-        return 'application/json'
